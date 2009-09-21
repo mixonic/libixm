@@ -1,0 +1,72 @@
+LibXML for Ruby
+===============
+
+LibXML is a communications layer for the [Illuminato X
+Machina][0] and the Ruby programming language.  I splits communication
+into two parts:
+
+* Adapters: hardware compatibility layers
+* Interfaces: software behavior models
+
+If neither is specified to `LibIXM.new`, the adapter `SFBProg` and
+interface `Simple` will be assumed.
+
+
+Adapters
+==========
+
+Currently, the only adapter available is `SFBProg`.
+
+SFBProg Adapter
+---------------
+
+The `SFBProg` adapter is a wrapper around the binary `sfbprog` or `sfbprog.exe`
+that ships with the Illuminato X Machina IDE.  The adapter assumes `sfbprog` is
+installed in the `PATH`, but the binary path can be specified easily:
+
+    ixm = LibIXM.new(
+      :sfbprog_path => '/usr/bin/sfbprog', # path for sfbprog or sfbprog.exe
+      :sfbprog_args => '', # additional arguments
+      :sfbprog_device => '/dev/ttyUSB0', # device for serial-over-usb
+      :sfbprog_sketch => 'mysketch.hex', # sketch
+    )
+
+`:sfbprog_path` and `:sfbprog_sketch` are most likely to be customized in your
+particular implementation.  `:sfbprog_sketch` is the `packet_echo.hex` sketch
+by default.  The normal newest-timestamp-propigates rules apply, but setting
+`:sfbprog_sketch` to the correct sketch is a reasonable safety measure to
+ensure you don't wipe your IXM.
+
+Interfaces
+========
+
+Currently, the only interface for LibIXM is `Simple`.
+
+Simple Interface
+----------------
+
+The `Simple` interface provides a reflex mechanism similar to the IXM's native
+`Body.reflex` call.
+
+    ixm.attach_reflex( /respondtome/ ) do |packet|
+      puts "Hey! I found a respondstome in '#{packet}'"
+    end
+
+This uses Ruby regex instead of first character comparison.  As documented in
+`examples/yodel_with_echo_packet.rb` a script should wait for a given response,
+or implement a simple timeout.  The `SFBProg` adapter uses a thread to read
+incoming packets, so scripts need to provide an appropriate time for task
+completion.
+
+More Information
+================
+
+The IXM and this library are discussed at:
+
+* [http://www.liquidware.com/shop/show/IXM/Illuminato+X+Machina][0]
+* [http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html][1]
+* [http://www.illuminatolabs.com][2]
+
+[0]: http://www.liquidware.com/shop/show/IXM/Illuminato+X+Machina "Illuminato X Machina at Liquidware"
+[1]: http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html "Illuminato X Machina on the blog"
+[2]: http://www.illuminatolabs.com "Illuminato X Machina site"
