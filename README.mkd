@@ -63,8 +63,9 @@ More Information
 
 The IXM and this library are discussed at:
 
-* [http://www.liquidware.com/shop/show/IXM/Illuminato+X+Machina][0]
-* [http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html][1]
+* [Illuminato X Machina Mailing List][4]
+* [Liquidware page for the Illuminato X Machina][0]
+* [Antipasto Hardware blog: Introducing the Illuminato X Machina][1]
 * [http://www.illuminatolabs.com][2]
 * [http://www.illuminatolabs.com/IlluminatoDownloads.htm][3]
 
@@ -72,3 +73,4 @@ The IXM and this library are discussed at:
 [1]: http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html "Illuminato X Machina on the blog"
 [2]: http://www.illuminatolabs.com "Illuminato X Machina site"
 [3]: http://www.illuminatolabs.com/IlluminatoDownloads.htm "Illuminato X Machina IDE"
+[4]: http://groups.google.com/group/illuminato?hl=en "Illuminato X Machina Mailing List"
