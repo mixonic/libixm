@@ -2,11 +2,11 @@ LibXML for Ruby
 ===============
 
 LibXML is a communications layer for the [Illuminato X
-Machina][0] and the Ruby programming language.  I splits communication
+Machina][0] and the Ruby programming language.  It splits communication
 into two parts:
 
-* Adapters: hardware compatibility layers
-* Interfaces: software behavior models
+* *Adapters* hardware compatibility layers
+* *Interfaces* software behavior models
 
 If neither is specified to `LibIXM.new`, the adapter `SFBProg` and
 interface `Simple` will be assumed.
@@ -21,7 +21,7 @@ SFBProg Adapter
 ---------------
 
 The `SFBProg` adapter is a wrapper around the binary `sfbprog` or `sfbprog.exe`
-that ships with the Illuminato X Machina IDE.  The adapter assumes `sfbprog` is
+that ships with the [Illuminato X Machina IDE][3].  The adapter assumes `sfbprog` is
 installed in the `PATH`, but the binary path can be specified easily:
 
     ixm = LibIXM.new(
@@ -66,7 +66,9 @@ The IXM and this library are discussed at:
 * [http://www.liquidware.com/shop/show/IXM/Illuminato+X+Machina][0]
 * [http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html][1]
 * [http://www.illuminatolabs.com][2]
+* [http://www.illuminatolabs.com/IlluminatoDownloads.htm][3]
 
 [0]: http://www.liquidware.com/shop/show/IXM/Illuminato+X+Machina "Illuminato X Machina at Liquidware"
 [1]: http://antipastohw.blogspot.com/2009/08/introducing-illuminato-x-machina.html "Illuminato X Machina on the blog"
 [2]: http://www.illuminatolabs.com "Illuminato X Machina site"
+[3]: http://www.illuminatolabs.com/IlluminatoDownloads.htm "Illuminato X Machina IDE"
