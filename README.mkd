@@ -5,8 +5,8 @@ LibXML is a communications layer for the [Illuminato X
 Machina][0] and the Ruby programming language.  It splits communication
 into two parts:
 
-* *Adapters* hardware compatibility layers
-* *Interfaces* software behavior models
+* **Adapters** hardware compatibility layers
+* **Interfaces** software behavior models
 
 If neither is specified to `LibIXM.new`, the adapter `SFBProg` and
 interface `Simple` will be assumed.
